@@ -1,6 +1,18 @@
 let myLibrary = [];
 const container = document.querySelector('.container')
 var id = 0;
+class Book {
+    constructor(id, title, author, number_of_pages, read){
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.pages = number_of_pages;
+        this.read = read;
+    }
+
+}
+
+
 if (localStorage.myLibrary){
     myLibrary = JSON.parse(localStorage.myLibrary);
     originalLibrary = myLibrary.length;
@@ -20,15 +32,6 @@ if (localStorage.myLibrary){
 }
 
 
-function Book(id, title, author, number_of_pages, read) {
-    this.id = id;
-    this.title = title;
-    this.author = author;
-    this.pages = number_of_pages;
-    this.read = read;
-
-  
-}
 
 function addBookToLibrary(title, author, number_of_pages, read) {
     id = myLibrary.length;
